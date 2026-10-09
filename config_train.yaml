@@ -1,0 +1,25 @@
+model_params:
+    name: "Learning CDF"
+
+dataset_params:
+    path: "./Datasets/"
+
+exp_params:
+    path: "./Experiments"
+
+trainer_params:
+    epochs: 200
+    batch_size: 32
+    learning_rate: 1.0e-4
+    k: 10
+    logger_steps: 100
+
+loss_weights:
+    direction_loss_weight: 1.0
+    normal_direction_loss_weight: 1.0
+    direction_smooth_loss_weight: 1.0
+    streams_loss_weight: 1.0
+
+logger_params:
+    path: "./Logger/"
+    name: "train_log.txt"
