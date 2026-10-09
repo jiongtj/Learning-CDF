@@ -1,0 +1,26 @@
+
+model_params:
+    name: "Learning CDF"
+dataset_params:
+    path: "./Datasets/"
+
+exp_params:
+    path: "./Experiments"
+    name: "model_200.pth"
+
+trainer_params:
+    batch_size: 1
+    k: 10
+
+loss_weights:
+    direction_loss_weight: 1.0
+    normal_direction_loss_weight: 1.0
+    direction_smooth_loss_weight: 1.0
+    streams_loss_weight: 1.0
+
+logger_params:
+    path: "./Logger/"
+    name: "test_log.txt"
+
+output_params:
+    path: "./Results/"

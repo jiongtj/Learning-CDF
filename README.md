@@ -62,7 +62,7 @@ Each `TriMesh_<split>.pkl` must be a dictionary whose values are lists containin
 | `tri_cd1` |  First conjugate direction | `(F, 3)` |
 | `tri_cd2` |  Second conjugate direction | `(F, 3)` |
 
-Here, V and F denote the numbers of vertices and triangular faces, respectively.
+Here, V and F denote the numbers of vertices and faces in the triangle mesh, respectively.
 
 Each `Streams_<split>.pkl` must contain:
 
