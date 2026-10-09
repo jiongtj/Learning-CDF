@@ -1,6 +1,6 @@
 # Learning-CDF: Learning Conjugate Direction Fields for Planar Quadrilateral Mesh Generation
 
-This repository contains the implementation for the paper：  
+This repository contains the implementation for the paper:  
 Learning Conjugate Direction Fields for Planar Quadrilateral Mesh Generation.
 
 ## Overview
@@ -31,7 +31,7 @@ Learning-CDF/
 
 ## Dataset
 
-This project requires a preprocessed dataset containing triangle meshes with geometry feature, ground-truth conjugate direction fields (CDFs), and streamlines traced from the CDFs.
+This project requires a preprocessed dataset containing triangle meshes with geometric feature, ground-truth conjugate direction fields (CDFs), and streamlines traced from the CDFs.
 
 ### Dataset structure
 
@@ -46,7 +46,7 @@ Datasets/
 ├── TriMesh_test.pkl
 └── Streams_test.pkl
 ```
-The dataset will be released soon.
+The dataset will be released soon. We will update this section with the download link once it becomes available.
 
 ### Dataset format
 
@@ -54,7 +54,7 @@ Each `TriMesh_<split>.pkl` must be a dictionary whose values are lists containin
 
 | Key | Meaning | Shape of each entry |
 | --- | --- | --- |
-| `names` | Surface identifiers | string |
+| `names` | Surface names | string |
 | `tri_vertices` | Vertex coordinates | `(V, 3)` |
 | `tri_faces` | Triangle vertex indices | `(F, 3)` |
 | `tri_vnormals` | Vertex normals | `(V, 3)` |
@@ -62,13 +62,17 @@ Each `TriMesh_<split>.pkl` must be a dictionary whose values are lists containin
 | `tri_cd1` |  First conjugate direction | `(F, 3)` |
 | `tri_cd2` |  Second conjugate direction | `(F, 3)` |
 
+Here, V and F denote the numbers of vertices and triangular faces, respectively.
+
 Each `Streams_<split>.pkl` must contain:
 
 | Key | Meaning |
 | --- | --- |
-| `names` | Surface identifiers, in the same order as TriMesh data |
+| `names` | Surface name |
 | `streams` | A list per surface of streams, each represented by 3D points `(L, 3)` |
 | `streams_fid` | Indices of the triangle mesh faces intersected by each stream (`L - 1` per stream) |
+
+Here, L denotes the number of points sampled along a streamline.
 
 
 
@@ -84,7 +88,7 @@ python train.py --config ./Configs/config_train.yaml
 
 ## Testing
 
-Edit 'Configs/config_test.yaml' to set the testing dataset path, output directory and pretrained model checkpoint.
+Edit `Configs/config_test.yaml` to set the testing dataset path, output directory and pretrained model checkpoint.
 
 Then run from the repository root:
 
@@ -115,4 +119,4 @@ This code is released under **BSD 2-Clause License**.
 
 ## Contact 
 
-If you have any questions with this code, please feel free to contact Jiong Tao ([jt2337@bath.ac.uk](mailto:jt2337@bath.ac.uk)), Yong-Liang Yang ([y.yang@cs.bath.ac.uk](mailto:y.yang@cs.bath.ac.uk)) or Bailin Deng ([DengB3@cardiff.ac.uk](mailto:DengB3@cardiff.ac.uk)).
+If you have any questions about this code, please feel free to contact Jiong Tao ([jt2337@bath.ac.uk](mailto:jt2337@bath.ac.uk)), Yong-Liang Yang ([y.yang@cs.bath.ac.uk](mailto:y.yang@cs.bath.ac.uk)) or Bailin Deng ([DengB3@cardiff.ac.uk](mailto:DengB3@cardiff.ac.uk)).
